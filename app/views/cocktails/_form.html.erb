@@ -1,0 +1,9 @@
+<div class="form">
+<%= simple_form_for @cocktail do |f| %>
+<div class="form-name">
+  <%= f.input :name %>
+  <%= render 'form' %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+</div>
+</div>

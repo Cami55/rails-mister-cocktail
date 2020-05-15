@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="cocktail-info">
+  <h1 class="cocktail-name"><%= @cocktail.name %></h1>
+  <p><%= image_tag @photo unless @photo.blank? %></p>
+  <h3>Recipe</h3>
+  <ul class="cocktail-recipe">
+    <% @doses.each do |dose| %>
+      <% ingredient = Ingredient.find(dose.ingredient_id) %>
+      <li><%=dose.description%> <%= ingredient.name%></li>
+    <% end %>
+  </ul>
+
+
+<%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail) %> |
+<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
+<%= link_to 'Delete', @cocktail, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', cocktails_path %>
+</div>

@@ -1,0 +1,63 @@
+// Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+body {
+  background-color: #faf2f2;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  color: #fff;
+  opacity: 1;
+  text-align: center;
+  margin-top: 12%;
+}
+
+.cocktails-list {
+  padding: 10px;
+}
+
+.btn-primary {
+  background-color: #ff28a5;
+  border-color: #ff28a5;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+    background-color: #ff28a5;
+  }
+}
+
