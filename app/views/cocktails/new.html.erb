@@ -1,9 +1,21 @@
 <%= render 'banner' %>
 
-<h1>Add a New Cocktail</h1>
-<div class="form-wrapper">
-  <div class="form-container">
-<%= render 'form' %>
-    <%= link_to 'Back', cocktails_path %>
+
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-text">
+            <h1>Create a Cocktail</h1>
+            <%= simple_form_for(@cocktail) do |f| %>
+              <%= f.input :name %>
+              <%= f.input :photo, as: :file %>
+              <%= f.submit "Create Cocktail", class: "btn btn-primary mt-2" %>
+            <% end %>
+            <%= link_to "Back to List", cocktails_path, class: "btn btn-primary mt-2" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
