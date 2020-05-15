@@ -1,6 +1,5 @@
-rails active_storage:install
-rails db:migrate
-
+cloudinary:
+  service: Cloudinary
 # test:
 #   service: Disk
 #   root: <%= Rails.root.join("tmp/storage") %>
