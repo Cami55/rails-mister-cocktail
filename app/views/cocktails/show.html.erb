@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<% @artricle.photos.each do |photos| %>
+<%= cl_image_tag @article.photo.key, alt: "alttext", width: 300, height: 300, crop: :fill %>
+<% end %>
+
 <div class="cocktail-info">
   <h1 class="cocktail-name"><%= @cocktail.name %></h1>
-  <p><%= image_tag @photo unless @photo.blank? %></p>
+
   <h3>Recipe</h3>
   <ul class="cocktail-recipe">
     <% @doses.each do |dose| %>
