@@ -1,20 +1,45 @@
-<%= render 'banner' %>
-
-<div class="container">
-  <div class="row">
-
-    <% @cocktails.each do |cocktail| %>
-
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= link_to cocktail_path(cocktail) do %>
-              <h1><%= cocktail.name %></h1>
-
-          </div>
-        <% end %>
-      </div>
-
-    <% end %>
-
+<div class="text-center">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://bjournal.co/wp-content/uploads/2017/06/cocktails-at-joes-at-east.jpg);">
+    <div class="container">
+     <h1>Madmoizelle Cocktail</h1>
+      <h5>Learn & create some of the most amazing cocktails!</h5>
+      <%= link_to 'Create', new_cocktail_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
 
+
+<div class="container">
+<div class="cards mb-3">
+
+  <% @cocktails.each do |cocktail| %>
+    <div class="card">
+      <%= link_to cocktail_path(cocktail), style: "width: 100%" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill unless cocktail.photo.blank? %>')">
+          <%= cocktail.name %>
+        </div>
+      <% end %>
+      <%= link_to cocktail_path(cocktail), method: :delete, class: "trash-logo", data: { confirm: "Are you sure you want to delete this item ?"} do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+</div>
+
+
+
+
+<div class="row justify-content-center">
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright ">
+  </div>
+</div>
+</div>

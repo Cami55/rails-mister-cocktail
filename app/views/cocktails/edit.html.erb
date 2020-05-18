@@ -1,16 +1,21 @@
-<div class="form-wrapper">
-  <div class="form-container">
-    <h1>Edit Your Cocktail</h1>
-
-    <h2><%= @cocktail.name %></h2>
-    <ul>
-      <% @doses.each do |dose| %>
-        <% ingredient = Ingredient.find(dose.ingredient_id) %>
-        <li><%=dose.description%> <%= ingredient.name%> <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      <% end %>
-    </ul>
-
-    <%= render 'form' %>
+  <div class="row justify-content-center mt-5 mb-5">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-text">
+            <h1>Edit Your Cocktail</h1>
+            <h2><%= @cocktail.name %></h2>
+            <ul>
+              <% @doses.each do |dose| %>
+              <% ingredient = Ingredient.find(dose.ingredient_id) %>
+              <li><%=dose.description%> <%= ingredient.name%> <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
     <%= link_to 'View Cocktail', @cocktail %> |
